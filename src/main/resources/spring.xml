@@ -19,11 +19,18 @@
     <bean id="C"
           scope="singleton" class="com.roman.domain.C">
         <lookup-method name="getD" bean="D"/>
-
     </bean>
     <bean id="D"
           scope="prototype" class="com.roman.domain.D">
     </bean>
+    <bean id="E"
+          class="com.roman.domain.E">
+        <replaced-method name="printClassName" replacer="NewE"/>
+    </bean>
+    <bean id="NewE"
+          class="com.roman.domain.NewE">
+    </bean>
+
 
 
 </beans>
