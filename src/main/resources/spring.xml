@@ -16,6 +16,14 @@
           class="com.roman.domain.B">
         <constructor-arg  ref="A"/>
     </bean>
+    <bean id="C"
+          scope="singleton" class="com.roman.domain.C">
+        <lookup-method name="getD" bean="D"/>
+
+    </bean>
+    <bean id="D"
+          scope="prototype" class="com.roman.domain.D">
+    </bean>
 
 
 </beans>

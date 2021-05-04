@@ -1,2 +1,4 @@
-package com.roman.domain;public class D {
+package com.roman.domain;
+
+public class D {
 }
