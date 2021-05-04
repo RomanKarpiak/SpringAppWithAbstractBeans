@@ -7,9 +7,14 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
     <context:property-placeholder location="classpath:app.properties"/>
+
     <bean id="A"
           class="com.roman.domain.A">
         <property name="name" value="${A.name}"/>
+    </bean>
+    <bean id="B"
+          class="com.roman.domain.B">
+        <constructor-arg  ref="A"/>
     </bean>
 
 
