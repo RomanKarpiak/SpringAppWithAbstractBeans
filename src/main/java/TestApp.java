@@ -1,7 +1,4 @@
-import com.roman.domain.A;
-import com.roman.domain.B;
-import com.roman.domain.C;
-import com.roman.domain.E;
+import com.roman.domain.*;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestApp {
@@ -12,10 +9,13 @@ public class TestApp {
         C c = context.getBean("C", C.class);
         C c1 = context.getBean("C", C.class);
         E e = context.getBean("E", E.class);
+        F f = context.getBean("F", F.class);
         System.out.println(a);
         System.out.println(b);
         System.out.println(c.getD());
         System.out.println(c1.getD());
         e.printClassName();
+        f.greeting();
+        context.close();
     }
 }
