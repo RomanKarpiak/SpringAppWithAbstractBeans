@@ -10,8 +10,7 @@ import org.springframework.context.ApplicationContextAware;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-public class F implements BeanNameAware,
-        ApplicationContextAware,
+public class F implements BeanNameAware, ApplicationContextAware,
         InitializingBean,
         DisposableBean {
     @Override
@@ -38,18 +37,20 @@ public class F implements BeanNameAware,
                 "Doing initialization class F");
     }
     public void greeting() {
+
         System.out.println("Hello from class F!");
     }
     @PreDestroy
     public void preDestroy(){
+
         System.out.println("--- @PreDestroy executed ---");
     }
     @Override
     public void destroy() throws Exception {
         System.out.println("--- destroy executed --- Container has been closed.");
     }
-
     public void doMyDestroy() {
+
         System.out.println("--- destroy-method executed --- Doing my destruction...");
     }
 

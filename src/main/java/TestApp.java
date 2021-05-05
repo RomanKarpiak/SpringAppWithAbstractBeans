@@ -14,6 +14,7 @@ public class TestApp {
         System.out.println(b);
         System.out.println(c.getD());
         System.out.println(c1.getD());
+        System.out.println(c.getFriend("Вася"));
         e.printClassName();
         f.greeting();
         context.close();
