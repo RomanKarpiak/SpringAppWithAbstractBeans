@@ -7,33 +7,27 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
     <context:property-placeholder location="classpath:app.properties"/>
-    <context:annotation-config/>
+    <bean class="com.roman.domain.ApplicationBeanPostProcessor"/>
 
-    <bean id="A"
-          class="com.roman.domain.A">
-        <property name="name" value="${A.name}"/>
+    <bean id="BeanA" class="com.roman.domain.BeanA">
+        <property name="name" value="${BeanA.name}"/>
     </bean>
-    <bean id="B"
-          class="com.roman.domain.B">
-        <constructor-arg ref="A"/>
+    <bean id="BeanB" class="com.roman.domain.BeanB">
+        <constructor-arg ref="BeanA"/>
     </bean>
-    <bean id="C"
-          scope="singleton" class="com.roman.domain.C">
-        <lookup-method name="getD" bean="D"/>
+    <bean id="BeanC" scope="singleton" class="com.roman.domain.BeanC">
+        <lookup-method name="getBeanD" bean="BeanD"/>
     </bean>
-    <bean id="D"
-          scope="prototype" class="com.roman.domain.D">
+    <bean id="BeanD" scope="prototype" class="com.roman.domain.BeanD"/>
+
+    <bean id="BeanE" class="com.roman.domain.BeanE">
+        <replaced-method name="printClassName" replacer="NewBeanE"/>
     </bean>
-    <bean id="E"
-          class="com.roman.domain.E">
-        <replaced-method name="printClassName" replacer="NewE"/>
-    </bean>
-    <bean id="NewE"
-          class="com.roman.domain.NewE">
-    </bean>
-    <bean id="F" class="com.roman.domain.F"
-          init-method="doMyInit"
-          destroy-method="doMyDestroy">
+    <bean id="NewBeanE" class="com.roman.domain.NewBeanE"/>
+    <bean id="BeanF" class="com.roman.domain.BeanF"
+          init-method="init"
+          destroy-method="destroy">
+        <property name="name" value="BeanF"/>
     </bean>
 
 

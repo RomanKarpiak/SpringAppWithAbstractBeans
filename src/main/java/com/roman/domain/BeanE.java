@@ -1,7 +1,7 @@
 package com.roman.domain;
 
-public class E {
+public class BeanE {
         public void printClassName(){
-        System.out.println("This is class E");
+        System.out.println("This is class BeanE");
     }
 }

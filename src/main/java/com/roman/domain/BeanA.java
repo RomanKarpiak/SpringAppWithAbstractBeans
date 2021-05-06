@@ -1,9 +1,9 @@
 package com.roman.domain;
 
-public class A {
+public class BeanA {
     private String name;
 
-    public A() {
+    public BeanA() {
     }
 
     public void setName(String name) {
@@ -12,7 +12,7 @@ public class A {
 
     @Override
     public String toString() {
-        return "A{" +
+        return "BeanA{" +
                 "name='" + name + '\'' +
                 '}';
     }

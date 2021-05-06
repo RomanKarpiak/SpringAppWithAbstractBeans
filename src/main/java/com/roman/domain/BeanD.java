@@ -1,9 +1,9 @@
 package com.roman.domain;
 
-public class D {
+public class BeanD {
     private String name;
 
-    public D() {
+    public BeanD() {
     }
 
     public String getName() {
